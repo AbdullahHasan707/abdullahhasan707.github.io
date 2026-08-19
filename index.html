@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Abdullah Hasan Shah | Portfolio</title>
 
     <style>
@@ -17,7 +16,7 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background: #f7f8fa;
+            background: #f0f4f8;
             color: #222;
         }
 
@@ -60,28 +59,62 @@
             padding: 80px 8%;
         }
 
+        /* ===== HERO ===== */
         .hero {
+            background: #f0f4f8;
             min-height: 90vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: #eef2ff;
+            align-items: center;
+            padding: 80px 8%;
         }
 
-        .hero h1 {
-            font-size: 50px;
-            margin-bottom: 15px;
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .hero h2 {
-            font-size: 28px;
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .hero-text h2 {
+            font-size: 22px;
+            color: #2563eb;
             margin-bottom: 20px;
+            font-weight: 600;
         }
 
-        .hero p {
-            max-width: 700px;
-            font-size: 18px;
-            margin-bottom: 25px;
+        .hero-text p {
+            font-size: 17px;
+            color: #4b5563;
+            max-width: 520px;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #ffffff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
         }
 
         .btn {
@@ -91,7 +124,7 @@
             color: white;
             text-decoration: none;
             border-radius: 6px;
-            margin-right: 10px;
+            font-weight: 500;
         }
 
         .btn:hover {
@@ -102,6 +135,7 @@
             text-align: center;
             font-size: 34px;
             margin-bottom: 40px;
+            color: #111827;
         }
 
         .about-text {
@@ -109,11 +143,13 @@
             margin: auto;
             text-align: center;
             font-size: 18px;
+            color: #4b5563;
         }
 
-       .projects {
+        /* ===== PROJECTS ===== */
+        .projects {
             display: flex;
-            flex-direction: column;   /* one under another */
+            flex-direction: column;
             gap: 40px;
             max-width: 900px;
             margin: 0 auto;
@@ -128,27 +164,32 @@
 
         .project-card img {
             width: 100%;
-            height: auto;              /* bigger natural size */
-            max-height: 450px;   /* try 450px or 500px */
+            height: auto;
+            max-height: 420px;
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 20px;
         }
+
         .project-card h3 {
             margin-bottom: 15px;
             font-size: 22px;
+            color: #111827;
         }
 
         .project-card p {
-            margin-bottom: 18px;
+            margin-bottom: 14px;
+            color: #4b5563;
         }
 
         .tech {
             font-size: 14px;
             font-weight: bold;
             margin-bottom: 18px;
+            color: #2563eb;
         }
 
+        /* ===== SKILLS ===== */
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -165,12 +206,51 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
 
-        .contact {
+        /* ===== CONTACT ===== */
+        #contact {
             text-align: center;
         }
 
-        .contact p {
-            margin-bottom: 20px;
+        #contact h2 {
+            font-size: 34px;
+            margin-bottom: 30px;
+        }
+
+        #contact form {
+            max-width: 500px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        #contact button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #contact button:hover {
+            background: #1d4ed8;
+        }
+
+        #contact a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
         }
 
         footer {
@@ -180,9 +260,29 @@
             padding: 25px;
         }
 
+        /* ===== MOBILE ===== */
         @media (max-width: 900px) {
-            .projects {
-                grid-template-columns: 1fr;
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-text p {
+                margin: 0 auto 30px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image img {
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
             }
 
             nav {
@@ -194,10 +294,6 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
-            .hero h1 {
-                font-size: 38px;
-            }
         }
     </style>
 </head>
@@ -207,7 +303,6 @@
 <header>
     <nav>
         <h2>Abdullah Hasan Shah</h2>
-
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -221,7 +316,7 @@
 
 <!-- HOME -->
 <section id="home" class="hero">
-    <div class="hero-content">
+    <div class="hero-container">
         <div class="hero-text">
             <h1>Abdullah Hasan Shah</h1>
             <h2>Machine Learning Engineer | Data Analyst | AI/ML Enthusiast</h2>
@@ -230,7 +325,7 @@
                 data analysis, data science, and artificial intelligence.
                 I enjoy building practical projects that solve real-world problems.
             </p>
-            <div>
+            <div class="hero-buttons">
                 <a href="#projects" class="btn">View My Projects</a>
                 <a href="#contact" class="btn">Contact Me</a>
             </div>
@@ -245,138 +340,105 @@
 
 <!-- ABOUT -->
 <section id="about">
-
     <h2 class="section-title">About Me</h2>
-
     <div class="about-text">
-
         <p>
             I am a Bachelor of Science in Computer Science student at
             the University of Technology Nowshera.
         </p>
-
         <br>
-
         <p>
             My interests include Python development, data analysis,
             machine learning, artificial intelligence, and building
             practical software projects.
         </p>
-
         <br>
-
         <p>
             I am continuously developing my technical and problem-solving
             skills through projects, coursework, and hands-on learning.
         </p>
-
     </div>
-
 </section>
 
 
 <!-- PROJECTS -->
 <section id="projects">
-
     <h2 class="section-title">My Projects</h2>
 
     <div class="projects">
 
         <!-- PROJECT 1 -->
-         <div class="project-card">
-            <img src="images/multi-model-chest-x-ray-diagnosis .png" 
-                 alt="Multi-Disease Chest X-Ray Prediction" 
-                 style="width:100%; border-radius:8px; margin-bottom:15px;">
+        <div class="project-card">
+            <img src="images/multi-model-chest-x-ray-diagnosis%20.png" 
+                 alt="Multi-Disease Chest X-Ray Prediction">
 
             <h3>Multi-Disease Chest X-Ray Prediction</h3>
-
             <p>
-               A deep learning computer vision project that analyzes chest X-ray images and predicts multiple diseases, 
+                A deep learning computer vision project that analyzes chest X-ray images and predicts multiple diseases, 
                 including Pneumonia, Tuberculosis (TB), and COVID-19. The project uses CNN-based image classification with Python 
                 and TensorFlow/Keras.
             </p>
-
             <div class="tech">
                 Python • Deep Learning • CNN • Computer Vision • TensorFlow/Keras
             </div>
-
             <a href="https://github.com/AbdullahHasan707/Multi-Disease-Chest-X-Ray-Diagnostic-AI" class="btn">GitHub</a>
-            <a href="https://multi-disease-chest-x-ray-diagnostic.streamlit.app/" class="btn"target="_blank">Live Demo</a>
-
+            <a href="https://multi-disease-chest-x-ray-diagnostic.streamlit.app/" class="btn" target="_blank">Live Demo</a>
         </div>
-
 
         <!-- PROJECT 2 -->
         <div class="project-card">
             <img src="images/customer-behavior-analysis-dashboard.png" 
-                 alt="Multi-Disease Chest X-Ray Prediction" 
-                 style="width:100%; border-radius:8px; margin-bottom:15px;">
+                 alt="Customer Behavior Analysis">
 
             <h3>Customer Behavior Analysis</h3>
-
             <p>
                 A data analysis project focused on understanding customer
                 behavior and identifying useful patterns from customer
                 data using Python, data cleaning, exploratory analysis,
                 and visualization.
             </p>
-
             <div class="tech">
                 Python • Pandas • Power BI • Matplotlib • Data Analysis
             </div>
-
             <a href="https://github.com/AbdullahHasan707/Customer-Shopping-Behavior-Analysis" class="btn">GitHub</a>
-
         </div>
 
-    <div class="project-card">
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+            <img src="images/super-store-sales-analysis-dashboard.png" 
+                 alt="Super Store Sales Analysis">
 
-        <h3>FlyRank Search Intelligence & Content Refresh</h3>
-
-    <div class="project-card">
-        <h3>FlyRank Search Intelligence & Content Refresh</h3>
-
-        <p>
-            A machine learning project developed during the FlyRank ML Internship
-            to identify underperforming content and prioritize pages for potential
-            content refresh.
-        </p>
-
-        <p>
-            I worked with an anonymized dataset of approximately 30,000 pages and
-            performed data exploration, feature preparation, baseline creation,
-            model training, and evaluation.
-        </p>
-
-        <p><strong>Models:</strong> Logistic Regression, Decision Tree, Random Forest</p>
-
-        <p><strong>Best Model:</strong> Random Forest</p>
-
-        <p>
-            The project helped me understand how machine learning can support search
-            intelligence and content prioritization workflows.
-        </p>
-
-        <a href="https://github.com/AbdullahHasan707/FlyRank-ml-internship"
-           target="_blank"
-           class="btn">
-        GitHub
-        </a>
-    </div>
-
+            <h3>FlyRank Search Intelligence & Content Refresh</h3>
+            <p>
+                A machine learning project developed during the FlyRank ML Internship
+                to identify underperforming content and prioritize pages for potential
+                content refresh.
+            </p>
+            <p>
+                I worked with an anonymized dataset of approximately 30,000 pages and
+                performed data exploration, feature preparation, baseline creation,
+                model training, and evaluation.
+            </p>
+            <p><strong>Models:</strong> Logistic Regression, Decision Tree, Random Forest</p>
+            <p><strong>Best Model:</strong> Random Forest</p>
+            <p>
+                The project helped me understand how machine learning can support search
+                intelligence and content prioritization workflows.
+            </p>
+            <div class="tech">
+                Python • Scikit-learn • Random Forest • Data Analysis
+            </div>
+            <a href="https://github.com/AbdullahHasan707/FlyRank-ml-internship" target="_blank" class="btn">GitHub</a>
+        </div>
 
     </div>
-
 </section>
 
 
 <!-- SKILLS -->
 <section id="skills">
-
     <h2 class="section-title">Skills</h2>
-
     <div class="skills">
-
         <div class="skill">Python</div>
         <div class="skill">C++</div>
         <div class="skill">SQL</div>
@@ -390,80 +452,48 @@
         <div class="skill">GitHub</div>
         <div class="skill">Jupyter Notebook</div>
         <div class="skill">Streamlit</div>
-
     </div>
-
 </section>
 
 
+<!-- CONTACT -->
 <section id="contact">
     <h2>Contact Me</h2>
+
     <form action="https://formspree.io/f/xljrwrzl" method="POST">
-
-    <p>
-        <label for="name">Name</label><br>
-        <input type="text" id="name" name="name" required>
-    </p>
-
-    <p>
-        <label for="email">Email</label><br>
-        <input type="email" id="email" name="email" required>
-    </p>
-
-    <p>
-        <label for="message">Message</label><br>
-        <textarea id="message" name="message" rows="5" required></textarea>
-    </p>
-
-    <p>
-        <button type="submit">Send Message</button>
-    </p>
-
-</form>
+        <p>
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+            <label for="message">Message</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </p>
+        <p>
+            <button type="submit">Send Message</button>
+        </p>
+    </form>
 
     <p>
         I am open to internships, projects, and opportunities
         related to Python, Data Analysis, and AI/ML.
     </p>
 
-    <p>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdullahhasan2917@gmail.com" target="_blank">
-            Email Me
-        </a>
-    </p>
-
-    <p>
-        <a href="https://www.linkedin.com/in/abdullah-hasan-shah-b306b6370/" target="_blank">
-            LinkedIn
-        </a>
-    </p>
-
-    <p>
-        <a href="https://github.com/AbdullahHasan707" target="_blank">
-            GitHub
-        </a>
-    </p>
-
-    <p>
-        <a href="https://github.com/AbdullahHasan707/abdullahhasan707.github.io/blob/main/Abdullah_Hasan_Shah_CV.pdf" target="_blank">
-            View My CV
-        </a>
-    </p>
-
-    <p>
-        <a href="YOUR_BOOKING_URL" target="_blank">
-            Book a Meeting
-        </a>
+    <p style="margin-top: 20px;">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdullahhasan2917@gmail.com" target="_blank">Email Me</a> &nbsp;|&nbsp;
+        <a href="https://www.linkedin.com/in/abdullah-hasan-shah-b306b6370/" target="_blank">LinkedIn</a> &nbsp;|&nbsp;
+        <a href="https://github.com/AbdullahHasan707" target="_blank">GitHub</a> &nbsp;|&nbsp;
+        <a href="https://github.com/AbdullahHasan707/abdullahhasan707.github.io/blob/main/Abdullah_Hasan_Shah_CV.pdf" target="_blank">View My CV</a>
     </p>
 </section>
 
 
 <footer>
-
-    <p>
-        © 2026 Abdullah Hasan Shah. All rights reserved.
-    </p>
-
+    <p>© 2026 Abdullah Hasan Shah. All rights reserved.</p>
 </footer>
 
 </body>
