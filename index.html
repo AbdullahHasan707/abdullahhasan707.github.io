@@ -198,6 +198,85 @@
             line-height: 1.85;
         }
 
+        /* ===== EDUCATION & EXPERIENCE ===== */
+        #education {
+            background: #1e293b;
+        }
+
+        #experience {
+            background: #0f172a;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .timeline-card {
+            background: #0f172a;
+            padding: 26px 30px;
+            border-radius: 14px;
+            border: 1px solid #334155;
+            transition: all 0.25s;
+        }
+
+        #education .timeline-card {
+            background: #1e293b;
+        }
+
+        .timeline-card:hover {
+            border-color: #475569;
+            transform: translateY(-3px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .timeline-header h3 {
+            font-size: 19px;
+            color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        .timeline-date {
+            font-size: 13px;
+            font-weight: 600;
+            color: #60a5fa;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        .timeline-org {
+            font-size: 14.5px;
+            color: #93c5fd;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .timeline-card p {
+            color: #94a3b8;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .timeline-card ul {
+            margin-top: 10px;
+            margin-left: 20px;
+            color: #94a3b8;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
         /* ===== PROJECTS ===== */
         #projects {
             background: #1e293b;
@@ -259,7 +338,7 @@
 
         /* ===== SKILLS ===== */
         #skills {
-            background: #0f172a;
+            background: #1e293b;
         }
 
         .skills {
@@ -272,7 +351,7 @@
         }
 
         .skill {
-            background: #1e293b;
+            background: #0f172a;
             padding: 11px 20px;
             border-radius: 8px;
             border: 1px solid #334155;
@@ -292,7 +371,7 @@
         /* ===== CONTACT ===== */
         #contact {
             text-align: center;
-            background: #1e293b;
+            background: #0f172a;
         }
 
         #contact h2 {
@@ -305,7 +384,7 @@
             max-width: 460px;
             margin: 0 auto 40px;
             text-align: left;
-            background: #0f172a;
+            background: #1e293b;
             padding: 32px;
             border-radius: 14px;
             border: 1px solid #334155;
@@ -325,7 +404,7 @@
             border: 1px solid #334155;
             border-radius: 8px;
             font-size: 15px;
-            background: #1e293b;
+            background: #0f172a;
             color: #e2e8f0;
             transition: border-color 0.2s;
         }
@@ -415,6 +494,10 @@
             section {
                 padding: 60px 5%;
             }
+
+            .timeline-header {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -427,6 +510,8 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -442,9 +527,9 @@
             <h1>Abdullah Hasan Shah</h1>
             <h2>Machine Learning Engineer | Data Analyst | AI/ML Enthusiast</h2>
             <p>
-                I am a Computer Science student interested in machine learning,
-                data analysis, data science, and artificial intelligence.
-                I enjoy building practical projects that solve real-world problems.
+                Computer Science student specializing in Artificial Intelligence,
+                focused on building practical machine learning and data-driven
+                solutions to real-world problems.
             </p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn">View My Projects</a>
@@ -464,20 +549,68 @@
     <h2 class="section-title">About Me</h2>
     <div class="about-text">
         <p>
-            I am a Bachelor of Science in Computer Science student at
-            the University of Technology Nowshera.
+            I am a Computer Science student specializing in Artificial Intelligence
+            at the University of Technology Nowshera, with a strong interest in
+            machine learning, data analysis, and applied AI.
         </p>
         <br>
         <p>
-            My interests include Python development, data analysis,
-            machine learning, artificial intelligence, and building
-            practical software projects.
+            My work include Python development, exploratory data analysis, and
+            building and deploying machine learning models, from computer vision
+            systems to predictive analytics dashboards.
         </p>
         <br>
         <p>
-            I am continuously developing my technical and problem-solving
-            skills through projects, coursework, and hands-on learning.
+            I continue to sharpen my technical and problem-solving skills through
+            coursework, independent projects, and hands-on industry experience.
         </p>
+    </div>
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="timeline">
+        <div class="timeline-card">
+            <div class="timeline-header">
+                <h3>BS Computer Science &mdash; AI Specialization</h3>
+                <span class="timeline-date">Expected Graduation: 2028</span>
+            </div>
+            <div class="timeline-org">University of Technology Nowshera</div>
+            <p>
+                Pursuing a Bachelor of Science in Computer Science with a
+                specialization in Artificial Intelligence. Coursework and
+                projects focus on machine learning, deep learning, data
+                analysis, and software engineering fundamentals.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- EXPERIENCE -->
+<section id="experience">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+        <div class="timeline-card">
+            <div class="timeline-header">
+                <h3>Machine Learning Engineer Intern</h3>
+                <span class="timeline-date">2 Months</span>
+            </div>
+            <div class="timeline-org">FlyRank</div>
+            <p>
+                Completed a hands-on machine learning internship focused on search
+                intelligence and content optimization, working with a real-world
+                dataset of approximately 30,000 pages.
+            </p>
+            <ul>
+                <li>Performed data exploration, cleaning, and feature engineering on large-scale content data</li>
+                <li>Built and evaluated baseline and advanced models, including Logistic Regression, Decision Tree, and Random Forest</li>
+                <li>Identified Random Forest as the best-performing model for prioritizing underperforming content</li>
+                <li>Delivered findings to support content refresh and search intelligence workflows</li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -613,8 +746,6 @@
 
 
 <footer>
-  <!-- your existing footer content -->
-  
   <p style="text-align: center; margin-top: 20px; font-size: 14px;">
     <a href="https://internship.flyrank.ai/verify" target="_blank" rel="noopener">
       <img src="https://img.shields.io/badge/FlyRank-Graduate-blue?style=for-the-badge" alt="FlyRank Graduate Badge">
@@ -622,13 +753,10 @@
   </p>
 </footer>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ff2a4fa3c4c54f92a53e4054e06a2488"}'></script><!-- End Cloudflare Web Analytics -->
-  <!-- your existing content -->
 
   <script>
   (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="PTQO8hz2XQsHKGWHhIAKe";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
   </script>
 
-</body>
-</html>
 </body>
 </html>
