@@ -1,6 +1,6 @@
 # Abdullah Hasan Shah – Portfolio
 
-**Live site:** https://abdullahasan707.github.io/
+**Live site:** https://abdullahhasan707.github.io/
 
 Personal portfolio built during the FlyRank AI Fluency Internship, showcasing my background as a Computer Science student specializing in Artificial Intelligence, along with my projects, skills, and experience in machine learning and data analysis.
 
