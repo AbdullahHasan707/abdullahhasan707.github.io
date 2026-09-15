@@ -1,762 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah Hasan Shah | Portfolio</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            background: #0f172a;
-            color: #e2e8f0;
-        }
-
-        header {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 16px 8%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #1e293b;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        nav h2 {
-            font-size: 20px;
-            font-weight: 600;
-            color: #f8fafc;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 28px;
-        }
-
-        nav ul li a {
-            color: #94a3b8;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 14.5px;
-            transition: color 0.2s;
-        }
-
-        nav ul li a:hover {
-            color: #60a5fa;
-        }
-
-        section {
-            padding: 90px 8%;
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-            background: linear-gradient(160deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-            min-height: 92vh;
-            display: flex;
-            align-items: center;
-            padding: 100px 8%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 70px;
-            width: 100%;
-            max-width: 1150px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-text h1 {
-            font-size: 52px;
-            margin-bottom: 14px;
-            color: #f8fafc;
-            font-weight: 700;
-            letter-spacing: -0.8px;
-            line-height: 1.15;
-        }
-
-        .hero-text h2 {
-            font-size: 18px;
-            color: #60a5fa;
-            margin-bottom: 22px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-
-        .hero-text p {
-            font-size: 17px;
-            color: #94a3b8;
-            max-width: 500px;
-            margin-bottom: 36px;
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-        }
-
-        .hero-image img {
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #1e293b;
-            box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.25), 0 25px 50px rgba(0,0,0,0.4);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 26px;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 14.5px;
-            transition: all 0.2s;
-            border: none;
-        }
-
-        .btn:hover {
-            background: #3b82f6;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1.5px solid #334155;
-            color: #e2e8f0;
-        }
-
-        .btn-outline:hover {
-            background: #1e293b;
-            border-color: #475569;
-            box-shadow: none;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 50px;
-            color: #f8fafc;
-            font-weight: 650;
-            letter-spacing: -0.3px;
-        }
-
-        /* ===== ABOUT ===== */
-        #about {
-            background: #0f172a;
-        }
-
-        .about-text {
-            max-width: 720px;
-            margin: auto;
-            text-align: center;
-            font-size: 17px;
-            color: #94a3b8;
-            line-height: 1.85;
-        }
-
-        /* ===== EDUCATION & EXPERIENCE ===== */
-        #education {
-            background: #1e293b;
-        }
-
-        #experience {
-            background: #0f172a;
-        }
-
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            max-width: 760px;
-            margin: 0 auto;
-        }
-
-        .timeline-card {
-            background: #0f172a;
-            padding: 26px 30px;
-            border-radius: 14px;
-            border: 1px solid #334155;
-            transition: all 0.25s;
-        }
-
-        #education .timeline-card {
-            background: #1e293b;
-        }
-
-        .timeline-card:hover {
-            border-color: #475569;
-            transform: translateY(-3px);
-            box-shadow: 0 16px 32px rgba(0,0,0,0.3);
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 6px;
-        }
-
-        .timeline-header h3 {
-            font-size: 19px;
-            color: #f1f5f9;
-            font-weight: 600;
-        }
-
-        .timeline-date {
-            font-size: 13px;
-            font-weight: 600;
-            color: #60a5fa;
-            letter-spacing: 0.3px;
-            white-space: nowrap;
-        }
-
-        .timeline-org {
-            font-size: 14.5px;
-            color: #93c5fd;
-            font-weight: 500;
-            margin-bottom: 12px;
-        }
-
-        .timeline-card p {
-            color: #94a3b8;
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-        .timeline-card ul {
-            margin-top: 10px;
-            margin-left: 20px;
-            color: #94a3b8;
-            font-size: 15px;
-            line-height: 1.8;
-        }
-
-        /* ===== PROJECTS ===== */
-        #projects {
-            background: #1e293b;
-        }
-
-        .projects {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            max-width: 860px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background: #0f172a;
-            padding: 28px;
-            border-radius: 16px;
-            border: 1px solid #334155;
-            transition: all 0.25s;
-        }
-
-        .project-card:hover {
-            border-color: #475569;
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-
-        .project-card img {
-            width: 100%;
-            height: auto;
-            max-height: 380px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 22px;
-            border: 1px solid #1e293b;
-        }
-
-        .project-card h3 {
-            margin-bottom: 12px;
-            font-size: 20px;
-            color: #f1f5f9;
-            font-weight: 600;
-        }
-
-        .project-card p {
-            margin-bottom: 12px;
-            color: #94a3b8;
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-        .tech {
-            font-size: 13px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            color: #60a5fa;
-            letter-spacing: 0.2px;
-        }
-
-        /* ===== SKILLS ===== */
-        #skills {
-            background: #1e293b;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .skill {
-            background: #0f172a;
-            padding: 11px 20px;
-            border-radius: 8px;
-            border: 1px solid #334155;
-            font-size: 14px;
-            font-weight: 500;
-            color: #cbd5e1;
-            transition: all 0.2s;
-        }
-
-        .skill:hover {
-            background: #2563eb;
-            color: white;
-            border-color: #2563eb;
-            transform: translateY(-2px);
-        }
-
-        /* ===== CONTACT ===== */
-        #contact {
-            text-align: center;
-            background: #0f172a;
-        }
-
-        #contact h2 {
-            font-size: 30px;
-            margin-bottom: 35px;
-            color: #f8fafc;
-        }
-
-        #contact form {
-            max-width: 460px;
-            margin: 0 auto 40px;
-            text-align: left;
-            background: #1e293b;
-            padding: 32px;
-            border-radius: 14px;
-            border: 1px solid #334155;
-        }
-
-        #contact label {
-            color: #94a3b8;
-            font-size: 14px;
-        }
-
-        #contact input,
-        #contact textarea {
-            width: 100%;
-            padding: 12px 14px;
-            margin-top: 6px;
-            margin-bottom: 16px;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            font-size: 15px;
-            background: #0f172a;
-            color: #e2e8f0;
-            transition: border-color 0.2s;
-        }
-
-        #contact input:focus,
-        #contact textarea:focus {
-            outline: none;
-            border-color: #2563eb;
-        }
-
-        #contact button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 13px 30px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 15px;
-            font-weight: 500;
-            width: 100%;
-            transition: background 0.2s;
-        }
-
-        #contact button:hover {
-            background: #3b82f6;
-        }
-
-        #contact a {
-            color: #60a5fa;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        #contact a:hover {
-            text-decoration: underline;
-        }
-
-        #contact > p {
-            color: #94a3b8;
-        }
-
-        footer {
-            background: #020617;
-            color: #64748b;
-            text-align: center;
-            padding: 28px;
-            font-size: 13.5px;
-            border-top: 1px solid #1e293b;
-        }
-
-        /* ===== MOBILE ===== */
-        @media (max-width: 900px) {
-            .hero-container {
-                flex-direction: column-reverse;
-                text-align: center;
-                gap: 45px;
-            }
-
-            .hero-text p {
-                margin: 0 auto 30px;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-image img {
-                width: 200px;
-                height: 200px;
-            }
-
-            .hero-text h1 {
-                font-size: 34px;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 14px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 16px;
-            }
-
-            section {
-                padding: 60px 5%;
-            }
-
-            .timeline-header {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abdullah Hasan Shah — Machine Learning Engineer & Data Analyst. Portfolio of AI/ML projects, experience, and skills.">
+  <meta name="keywords" content="Machine Learning, Data Analyst, AI, Portfolio, Python, Deep Learning">
+  <meta name="author" content="Abdullah Hasan Shah">
+  <meta property="og:title" content="Abdullah Hasan Shah | ML Engineer & Data Analyst">
+  <meta property="og:description" content="Building practical machine learning and data-driven solutions.">
+  <meta property="og:type" content="website">
+  <title>Abdullah Hasan Shah | ML Engineer & Data Analyst</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>A</text></svg>">
 </head>
-
 <body>
 
 <header>
-    <nav>
-        <h2>Abdullah Hasan Shah</h2>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <a href="#home" class="logo">Abdullah<span>.</span></a>
+    <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <ul id="navMenu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-
-<!-- HOME -->
+<!-- HERO -->
 <section id="home" class="hero">
-    <div class="hero-container">
-        <div class="hero-text">
-            <h1>Abdullah Hasan Shah</h1>
-            <h2>Machine Learning Engineer | Data Analyst | AI/ML Enthusiast</h2>
-            <p>
-                Computer Science student specializing in Artificial Intelligence,
-                focused on building practical machine learning and data-driven
-                solutions to real-world problems.
-            </p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn">View My Projects</a>
-                <a href="#contact" class="btn btn-outline">Contact Me</a>
-            </div>
-        </div>
-
-        <div class="hero-image">
-            <img src="images/Abdullah.jpeg" alt="Abdullah Hasan Shah">
-        </div>
+  <div class="hero-container">
+    <div class="hero-text">
+      <div class="hero-badge">Open to opportunities</div>
+      <h1>Abdullah Hasan Shah</h1>
+      <h2>Machine Learning Engineer · Data Analyst · AI/ML Enthusiast</h2>
+      <p>
+        Computer Science student specializing in Artificial Intelligence,
+        focused on building practical machine learning and data-driven
+        solutions to real-world problems.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        <a href="Abdullah_Hasan_Shah_CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download CV</a>
+      </div>
     </div>
+    <div class="hero-image">
+      <img src="images/Abdullah.jpeg" alt="Abdullah Hasan Shah">
+    </div>
+  </div>
 </section>
-
 
 <!-- ABOUT -->
 <section id="about">
+  <div class="container">
     <h2 class="section-title">About Me</h2>
-    <div class="about-text">
+    <p class="section-subtitle">Passionate about turning data into intelligent systems</p>
+    <div class="about-grid">
+      <div class="about-text">
         <p>
-            I am a Computer Science student specializing in Artificial Intelligence
-            at the University of Technology Nowshera, with a strong interest in
-            machine learning, data analysis, and applied AI.
+          I am a Computer Science student specializing in Artificial Intelligence
+          at the University of Technology Nowshera, with a strong interest in
+          machine learning, data analysis, and applied AI.
         </p>
-        <br>
         <p>
-            My work include Python development, exploratory data analysis, and
-            building and deploying machine learning models, from computer vision
-            systems to predictive analytics dashboards.
+          My work includes Python development, exploratory data analysis, and
+          building and deploying machine learning models — from computer vision
+          systems to predictive analytics dashboards.
         </p>
-        <br>
         <p>
-            I continue to sharpen my technical and problem-solving skills through
-            coursework, independent projects, and hands-on industry experience.
+          I continue to sharpen my technical and problem-solving skills through
+          coursework, independent projects, and hands-on industry experience.
         </p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <h4>🎯 Focus Areas</h4>
+          <p>Machine Learning, Deep Learning, Data Analysis & Visualization</p>
+        </div>
+        <div class="highlight-card">
+          <h4>🛠 What I Build</h4>
+          <p>CNNs for medical imaging, predictive models, and interactive dashboards</p>
+        </div>
+        <div class="highlight-card">
+          <h4>📈 Currently</h4>
+          <p>Seeking internships and roles in AI/ML and Data Science</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
-
 
 <!-- EDUCATION -->
 <section id="education">
+  <div class="container">
     <h2 class="section-title">Education</h2>
+    <p class="section-subtitle">Building a strong foundation in AI and Computer Science</p>
     <div class="timeline">
-        <div class="timeline-card">
-            <div class="timeline-header">
-                <h3>BS Computer Science &mdash; AI Specialization</h3>
-                <span class="timeline-date">Expected Graduation: 2028</span>
-            </div>
-            <div class="timeline-org">University of Technology Nowshera</div>
-            <p>
-                Pursuing a Bachelor of Science in Computer Science with a
-                specialization in Artificial Intelligence. Coursework and
-                projects focus on machine learning, deep learning, data
-                analysis, and software engineering fundamentals.
-            </p>
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <h3>BS Computer Science — AI Specialization</h3>
+          <span class="timeline-date">Expected 2028</span>
         </div>
+        <div class="timeline-org">University of Technology Nowshera</div>
+        <p>
+          Pursuing a Bachelor of Science in Computer Science with a
+          specialization in Artificial Intelligence. Coursework and
+          projects focus on machine learning, deep learning, data
+          analysis, and software engineering fundamentals.
+        </p>
+      </div>
     </div>
+  </div>
 </section>
-
 
 <!-- EXPERIENCE -->
 <section id="experience">
+  <div class="container">
     <h2 class="section-title">Experience</h2>
+    <p class="section-subtitle">Applying ML in real-world production settings</p>
     <div class="timeline">
-        <div class="timeline-card">
-            <div class="timeline-header">
-                <h3>Machine Learning Engineer Intern</h3>
-                <span class="timeline-date">2 Months</span>
-            </div>
-            <div class="timeline-org">FlyRank</div>
-            <p>
-                Completed a hands-on machine learning internship focused on search
-                intelligence and content optimization, working with a real-world
-                dataset of approximately 30,000 pages.
-            </p>
-            <ul>
-                <li>Performed data exploration, cleaning, and feature engineering on large-scale content data</li>
-                <li>Built and evaluated baseline and advanced models, including Logistic Regression, Decision Tree, and Random Forest</li>
-                <li>Identified Random Forest as the best-performing model for prioritizing underperforming content</li>
-                <li>Delivered findings to support content refresh and search intelligence workflows</li>
-            </ul>
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <h3>Machine Learning Engineer Intern</h3>
+          <span class="timeline-date">2 Months</span>
         </div>
+        <div class="timeline-org">FlyRank</div>
+        <p>
+          Completed a hands-on machine learning internship focused on search
+          intelligence and content optimization, working with a real-world
+          dataset of approximately 30,000 pages.
+        </p>
+        <ul>
+          <li>Performed data exploration, cleaning, and feature engineering on large-scale content data</li>
+          <li>Built and evaluated baseline and advanced models (Logistic Regression, Decision Tree, Random Forest)</li>
+          <li>Identified Random Forest as the best-performing model for prioritizing underperforming content</li>
+          <li>Delivered findings to support content refresh and search intelligence workflows</li>
+        </ul>
+      </div>
     </div>
+  </div>
 </section>
-
 
 <!-- PROJECTS -->
 <section id="projects">
-    <h2 class="section-title">My Projects</h2>
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">Selected work in computer vision, analytics, and ML</p>
+    <div class="projects-grid">
 
-    <div class="projects">
-
-        <!-- PROJECT 1 -->
-        <div class="project-card">
-            <img src="images/multi-model-chest-x-ray-diagnosis%20.png" 
-                 alt="Multi-Disease Chest X-Ray Prediction">
-
-            <h3>Multi-Disease Chest X-Ray Prediction</h3>
-            <p>
-                A deep learning computer vision project that analyzes chest X-ray images and predicts multiple diseases, 
-                including Pneumonia, Tuberculosis (TB), and COVID-19. The project uses CNN-based image classification with Python 
-                and TensorFlow/Keras.
-            </p>
-            <div class="tech">
-                Python • Deep Learning • CNN • Computer Vision • TensorFlow/Keras
-            </div>
-            <a href="https://github.com/AbdullahHasan707/Multi-Disease-Chest-X-Ray-Diagnostic-AI" class="btn">GitHub</a>
-            <a href="https://multi-disease-chest-x-ray-diagnostic.streamlit.app/" class="btn" target="_blank">Live Demo</a>
+      <!-- Project 1 -->
+      <article class="project-card">
+        <img src="images/multi-model-chest-x-ray-diagnosis%20.png" alt="Multi-Disease Chest X-Ray Prediction">
+        <div class="project-body">
+          <h3>Multi-Disease Chest X-Ray Prediction</h3>
+          <p>
+            Deep learning computer vision system that analyzes chest X-ray images
+            and predicts multiple diseases including Pneumonia, Tuberculosis (TB),
+            and COVID-19 using CNN-based image classification.
+          </p>
+          <div class="tech">
+            <span>Python</span>
+            <span>Deep Learning</span>
+            <span>CNN</span>
+            <span>TensorFlow/Keras</span>
+            <span>Computer Vision</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/AbdullahHasan707/Multi-Disease-Chest-X-Ray-Diagnostic-AI" class="btn btn-sm" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://multi-disease-chest-x-ray-diagnostic.streamlit.app/" class="btn btn-sm btn-outline" target="_blank" rel="noopener">Live Demo</a>
+          </div>
         </div>
+      </article>
 
-        <!-- PROJECT 2 -->
-        <div class="project-card">
-            <img src="images/customer-behavior-analysis-dashboard.png" 
-                 alt="Customer Behavior Analysis">
-
-            <h3>Customer Behavior Analysis</h3>
-            <p>
-                A data analysis project focused on understanding customer
-                behavior and identifying useful patterns from customer
-                data using Python, data cleaning, exploratory analysis,
-                and visualization.
-            </p>
-            <div class="tech">
-                Python • Pandas • Power BI • Matplotlib • Data Analysis
-            </div>
-            <a href="https://github.com/AbdullahHasan707/Customer-Shopping-Behavior-Analysis" class="btn">GitHub</a>
+      <!-- Project 2 -->
+      <article class="project-card">
+        <img src="images/customer-behavior-analysis-dashboard.png" alt="Customer Behavior Analysis">
+        <div class="project-body">
+          <h3>Customer Behavior Analysis</h3>
+          <p>
+            Data analysis project focused on understanding customer behavior
+            and identifying actionable patterns using Python, data cleaning,
+            exploratory analysis, and visualization.
+          </p>
+          <div class="tech">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>Power BI</span>
+            <span>Matplotlib</span>
+            <span>Data Analysis</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/AbdullahHasan707/Customer-Shopping-Behavior-Analysis" class="btn btn-sm" target="_blank" rel="noopener">GitHub</a>
+          </div>
         </div>
+      </article>
 
-        <!-- PROJECT 3 -->
-        <div class="project-card">
-
-            <h3>FlyRank Search Intelligence & Content Refresh</h3>
-            <p>
-                A machine learning project developed during the FlyRank ML Internship
-                to identify underperforming content and prioritize pages for potential
-                content refresh.
-            </p>
-            <p>
-                I worked with an anonymized dataset of approximately 30,000 pages and
-                performed data exploration, feature preparation, baseline creation,
-                model training, and evaluation.
-            </p>
-            <p><strong>Models:</strong> Logistic Regression, Decision Tree, Random Forest</p>
-            <p><strong>Best Model:</strong> Random Forest</p>
-            <p>
-                The project helped me understand how machine learning can support search
-                intelligence and content prioritization workflows.
-            </p>
-            <div class="tech">
-                Python • Scikit-learn • Random Forest • Data Analysis
-            </div>
-            <a href="https://github.com/AbdullahHasan707/FlyRank-ml-internship" target="_blank" class="btn">GitHub</a>
+      <!-- Project 3 -->
+      <article class="project-card">
+        <div class="project-body">
+          <h3>FlyRank Search Intelligence & Content Refresh</h3>
+          <p>
+            Machine learning project developed during the FlyRank ML Internship
+            to identify underperforming content and prioritize pages for refresh
+            across an anonymized dataset of ~30,000 pages.
+          </p>
+          <p>
+            Involved data exploration, feature preparation, baseline creation,
+            model training and evaluation. <strong>Best model:</strong> Random Forest.
+          </p>
+          <div class="tech">
+            <span>Python</span>
+            <span>Scikit-learn</span>
+            <span>Random Forest</span>
+            <span>Data Analysis</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/AbdullahHasan707/FlyRank-ml-internship" class="btn btn-sm" target="_blank" rel="noopener">GitHub</a>
+          </div>
         </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project-card">
+        <img src="images/super-store-sales-analysis-dashboard.png" alt="Superstore Sales Analysis Dashboard">
+        <div class="project-body">
+          <h3>Superstore Sales Analysis Dashboard</h3>
+          <p>
+            Interactive dashboard analyzing sales performance, trends, and
+            customer segments for a retail dataset. Built to surface insights
+            that support data-driven business decisions.
+          </p>
+          <div class="tech">
+            <span>Power BI</span>
+            <span>Data Visualization</span>
+            <span>Sales Analytics</span>
+          </div>
+        </div>
+      </article>
 
     </div>
+  </div>
 </section>
-
 
 <!-- SKILLS -->
 <section id="skills">
+  <div class="container">
     <h2 class="section-title">Skills</h2>
-    <div class="skills">
-        <div class="skill">Python</div>
-        <div class="skill">C++</div>
-        <div class="skill">SQL</div>
-        <div class="skill">Pandas</div>
-        <div class="skill">NumPy</div>
-        <div class="skill">Matplotlib</div>
-        <div class="skill">Scikit-learn</div>
-        <div class="skill">Machine Learning</div>
-        <div class="skill">Deep Learning</div>
-        <div class="skill">Power BI</div>
-        <div class="skill">GitHub</div>
-        <div class="skill">Jupyter Notebook</div>
-        <div class="skill">Streamlit</div>
+    <p class="section-subtitle">Technologies and tools I work with</p>
+    <div class="skills-categories">
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <div class="skill-tags">
+          <span class="skill">Python</span>
+          <span class="skill">C++</span>
+          <span class="skill">SQL</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Machine Learning</h4>
+        <div class="skill-tags">
+          <span class="skill">Scikit-learn</span>
+          <span class="skill">Machine Learning</span>
+          <span class="skill">Deep Learning</span>
+          <span class="skill">TensorFlow / Keras</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Data & Visualization</h4>
+        <div class="skill-tags">
+          <span class="skill">Pandas</span>
+          <span class="skill">NumPy</span>
+          <span class="skill">Matplotlib</span>
+          <span class="skill">Power BI</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Tools & Platforms</h4>
+        <div class="skill-tags">
+          <span class="skill">GitHub</span>
+          <span class="skill">Jupyter</span>
+          <span class="skill">Streamlit</span>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
-
 
 <!-- CONTACT -->
 <section id="contact">
-    <h2>Contact Me</h2>
+  <div class="container">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-subtitle">Open to internships, projects, and opportunities in Data Analysis and AI/ML</p>
 
-    <form action="https://formspree.io/f/xljrwrzl" method="POST">
-        <p>
-            <label for="name">Name</label><br>
-            <input type="text" id="name" name="name" required>
-        </p>
-        <p>
-            <label for="email">Email</label><br>
-            <input type="email" id="email" name="email" required>
-        </p>
-        <p>
-            <label for="message">Message</label><br>
-            <textarea id="message" name="message" rows="5" required></textarea>
-        </p>
-        <p>
-            <button type="submit">Send Message</button>
-        </p>
+    <form class="contact-form" action="https://formspree.io/f/xljrwrzl" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required placeholder="Your name">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required placeholder="How can I help?"></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
     </form>
 
-    <p>
-        I am open to internships, projects, and opportunities
-        related to Data Analysis and AI/ML.
-    </p>
-
-    <p style="margin-top: 20px;">
-        <a href="https://github.com/AbdullahHasan707/abdullahhasan707.github.io/blob/main/Abdullah_Hasan_Shah_CV.pdf" target="_blank">Download CV</a> &nbsp;|&nbsp;
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdullahhasan2917@gmail.com" target="_blank">Email Me</a> &nbsp;|&nbsp;
-        <a href="https://www.linkedin.com/in/abdullah-hasan-shah-b306b6370/" target="_blank">LinkedIn</a> &nbsp;|&nbsp;
-        <a href="https://github.com/AbdullahHasan707" target="_blank">GitHub</a> &nbsp;|&nbsp;
-    </p>
+    <div class="social-links">
+      <a href="Abdullah_Hasan_Shah_CV.pdf" target="_blank" rel="noopener">📄 Download CV</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdullahhasan2917@gmail.com" target="_blank" rel="noopener">✉️ Email</a>
+      <a href="https://www.linkedin.com/in/abdullah-hasan-shah-b306b6370/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/AbdullahHasan707" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
 </section>
 
-
-
 <footer>
-  <p style="text-align: center; margin-top: 20px; font-size: 14px;">
+  <p>© 2026 Abdullah Hasan Shah. Built with care.</p>
+  <p style="margin-top: 12px;">
     <a href="https://internship.flyrank.ai/verify" target="_blank" rel="noopener">
       <img src="https://img.shields.io/badge/FlyRank-Graduate-blue?style=for-the-badge" alt="FlyRank Graduate Badge">
     </a>
   </p>
 </footer>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ff2a4fa3c4c54f92a53e4054e06a2488"}'></script><!-- End Cloudflare Web Analytics -->
 
-  <script>
-  (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="PTQO8hz2XQsHKGWHhIAKe";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-  </script>
+<!-- Cloudflare Web Analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ff2a4fa3c4c54f92a53e4054e06a2488"}'></script>
+
+<!-- Chatbase (kept from original) -->
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="PTQO8hz2XQsHKGWHhIAKe";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+<script>
+  // Mobile menu toggle
+  const toggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('navMenu');
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+  // Close menu when a link is clicked
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => menu.classList.remove('open'));
+  });
+</script>
 
 </body>
 </html>
