@@ -219,84 +219,110 @@
     <h2 class="section-title">Projects</h2>
     <p class="section-subtitle">Selected work across machine learning and data analysis</p>
 
-    <div class="projects-two-col">
+    <div class="projects-side-by-side">
 
-      <!-- LEFT COLUMN -->
-      <div class="proj-col">
-        <div class="proj-col-header">
-          <h3>Machine Learning &amp; Deep Learning</h3>
-        </div>
-
-        <article class="proj-card">
-          <h4>Multi-Disease Chest X-Ray Prediction</h4>
-          <p>CNN-based computer vision system that detects Pneumonia, TB, and COVID-19 from chest X-rays. Presented at Alibaba Cloud AI Hackathon 2026 (Grade 1).</p>
-          <div class="tech">
-            <span>Python</span><span>Deep Learning</span><span>CNN</span><span>TensorFlow</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/AbdullahHasan707/Multi-Disease-Chest-X-Ray-Diagnostic-AI" class="btn btn-sm" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://multi-disease-chest-x-ray-diagnostic.streamlit.app/" class="btn btn-sm btn-outline" target="_blank" rel="noopener">Live Demo</a>
-          </div>
-        </article>
-
-        <article class="proj-card">
-          <h4>FlyRank Search Intelligence</h4>
-          <p>ML models to identify underperforming content across ~30,000 pages. Best performing model: Random Forest.</p>
-          <div class="tech">
-            <span>Python</span><span>Scikit-learn</span><span>Random Forest</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/AbdullahHasan707/FlyRank-ml-internship" class="btn btn-sm" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </article>
-
-        <article class="proj-card">
-          <h4>SmogAlert-PK</h4>
-          <p>Air-quality and smog awareness system built at Smognet Datathon 2026 (UET Mardan). Team Leader: Ali Khan.</p>
-          <div class="tech">
-            <span>Python</span><span>ML</span><span>Data Analysis</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/AbdullahHasan707/SmogAlert-PK" class="btn btn-sm" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </article>
+      <!-- LEFT: ML & DL -->
+      <div class="proj-box">
+        <h3 class="proj-box-title">Machine Learning &amp; Deep Learning</h3>
+        <ol class="proj-name-list">
+          <li>
+            <span class="proj-name">Multi-Disease Chest X-Ray Prediction</span>
+            <button class="view-btn" data-target="ml-1">View</button>
+          </li>
+          <li>
+            <span class="proj-name">FlyRank Search Intelligence</span>
+            <button class="view-btn" data-target="ml-2">View</button>
+          </li>
+          <li>
+            <span class="proj-name">SmogAlert-PK</span>
+            <button class="view-btn" data-target="ml-3">View</button>
+          </li>
+        </ol>
       </div>
 
-      <!-- RIGHT COLUMN -->
-      <div class="proj-col">
-        <div class="proj-col-header">
-          <h3>Data Analysis &amp; Visualization</h3>
+      <!-- RIGHT: Data Analysis -->
+      <div class="proj-box">
+        <h3 class="proj-box-title">Data Analysis &amp; Visualization</h3>
+        <ol class="proj-name-list">
+          <li>
+            <span class="proj-name">Customer Behavior Analysis</span>
+            <button class="view-btn" data-target="da-1">View</button>
+          </li>
+          <li>
+            <span class="proj-name">Superstore Sales Dashboard</span>
+            <button class="view-btn" data-target="da-2">View</button>
+          </li>
+          <li>
+            <span class="proj-name">SmogAlert-PK</span>
+            <button class="view-btn" data-target="da-3">View</button>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+
+    <!-- DETAIL PANELS (shown when View is clicked) -->
+    <div class="proj-details-area">
+
+      <div class="proj-detail" id="ml-1">
+        <button class="close-detail">&times;</button>
+        <img src="images/multi-model-chest-x-ray-diagnosis%20.png" alt="Multi-Disease Chest X-Ray">
+        <h4>Multi-Disease Chest X-Ray Prediction</h4>
+        <p>CNN-based computer vision system that detects Pneumonia, TB, and COVID-19 from chest X-rays. Presented at Alibaba Cloud AI Hackathon Pakistan 2026 (Grade 1).</p>
+        <div class="tech"><span>Python</span><span>Deep Learning</span><span>CNN</span><span>TensorFlow/Keras</span><span>Computer Vision</span></div>
+        <div class="project-links">
+          <a href="https://github.com/AbdullahHasan707/Multi-Disease-Chest-X-Ray-Diagnostic-AI" class="btn btn-sm" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://multi-disease-chest-x-ray-diagnostic.streamlit.app/" class="btn btn-sm btn-outline" target="_blank" rel="noopener">Live Demo</a>
         </div>
+      </div>
 
-        <article class="proj-card">
-          <h4>Customer Behavior Analysis</h4>
-          <p>Exploratory analysis and visualization to uncover customer patterns and actionable business insights.</p>
-          <div class="tech">
-            <span>Python</span><span>Pandas</span><span>Power BI</span><span>Matplotlib</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/AbdullahHasan707/Customer-Shopping-Behavior-Analysis" class="btn btn-sm" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </article>
+      <div class="proj-detail" id="ml-2">
+        <button class="close-detail">&times;</button>
+        <h4>FlyRank Search Intelligence &amp; Content Refresh</h4>
+        <p>Machine learning project from the FlyRank ML Internship. Built models to identify underperforming content across ~30,000 pages. Best model: Random Forest.</p>
+        <div class="tech"><span>Python</span><span>Scikit-learn</span><span>Random Forest</span><span>Machine Learning</span></div>
+        <div class="project-links">
+          <a href="https://github.com/AbdullahHasan707/FlyRank-ml-internship" class="btn btn-sm" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
 
-        <article class="proj-card">
-          <h4>Superstore Sales Dashboard</h4>
-          <p>Interactive Power BI dashboard analyzing sales trends, performance, and customer segments.</p>
-          <div class="tech">
-            <span>Power BI</span><span>Data Visualization</span><span>Sales Analytics</span>
-          </div>
-        </article>
+      <div class="proj-detail" id="ml-3">
+        <button class="close-detail">&times;</button>
+        <h4>SmogAlert-PK</h4>
+        <p>Air-quality and smog awareness system built at Smognet Datathon 2026 (UET Mardan). Team Leader: Ali Khan.</p>
+        <div class="tech"><span>Python</span><span>ML</span><span>Data Analysis</span><span>Datathon</span></div>
+        <div class="project-links">
+          <a href="https://github.com/AbdullahHasan707/SmogAlert-PK" class="btn btn-sm" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
 
-        <article class="proj-card">
-          <h4>SmogAlert-PK</h4>
-          <p>Data-driven air-quality insights and smog awareness project from Smognet Datathon 2026.</p>
-          <div class="tech">
-            <span>Python</span><span>Data Analysis</span><span>Datathon</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/AbdullahHasan707/SmogAlert-PK" class="btn btn-sm" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </article>
+      <div class="proj-detail" id="da-1">
+        <button class="close-detail">&times;</button>
+        <img src="images/customer-behavior-analysis-dashboard.png" alt="Customer Behavior Analysis">
+        <h4>Customer Behavior Analysis</h4>
+        <p>Exploratory data analysis and visualization to uncover customer patterns and actionable business insights.</p>
+        <div class="tech"><span>Python</span><span>Pandas</span><span>Power BI</span><span>Matplotlib</span></div>
+        <div class="project-links">
+          <a href="https://github.com/AbdullahHasan707/Customer-Shopping-Behavior-Analysis" class="btn btn-sm" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <div class="proj-detail" id="da-2">
+        <button class="close-detail">&times;</button>
+        <img src="images/super-store-sales-analysis-dashboard.png" alt="Superstore Sales Dashboard">
+        <h4>Superstore Sales Analysis Dashboard</h4>
+        <p>Interactive Power BI dashboard analyzing sales trends, performance, and customer segments.</p>
+        <div class="tech"><span>Power BI</span><span>Data Visualization</span><span>Sales Analytics</span></div>
+      </div>
+
+      <div class="proj-detail" id="da-3">
+        <button class="close-detail">&times;</button>
+        <h4>SmogAlert-PK</h4>
+        <p>Data-driven air-quality insights and smog awareness project from Smognet Datathon 2026.</p>
+        <div class="tech"><span>Python</span><span>Data Analysis</span><span>Datathon</span></div>
+        <div class="project-links">
+          <a href="https://github.com/AbdullahHasan707/SmogAlert-PK" class="btn btn-sm" target="_blank" rel="noopener">GitHub</a>
+        </div>
       </div>
 
     </div>
@@ -400,9 +426,31 @@
   toggle.addEventListener('click', () => {
     menu.classList.toggle('open');
   });
-  // Close menu when a link is clicked
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => menu.classList.remove('open'));
+  });
+
+  // Project View buttons
+  document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // close all first
+      document.querySelectorAll('.proj-detail').forEach(d => d.classList.remove('active'));
+      document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+      // open target
+      const target = document.getElementById(btn.dataset.target);
+      if (target) {
+        target.classList.add('active');
+        btn.classList.add('active');
+        target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  });
+  // Close detail
+  document.querySelectorAll('.close-detail').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.proj-detail').classList.remove('active');
+      document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+    });
   });
 </script>
 
