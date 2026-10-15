@@ -371,6 +371,10 @@ section {
   background: var(--bg);
 }
 
+#hackathons {
+  background: var(--bg-elevated);
+}
+
 .timeline {
   display: flex;
   flex-direction: column;
