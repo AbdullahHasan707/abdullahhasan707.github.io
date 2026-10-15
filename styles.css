@@ -452,6 +452,33 @@ section {
   margin-bottom: 4px;
 }
 
+/* ---------- PROJECT CATEGORY HEADINGS ---------- */
+.project-category {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-hover);
+  margin: 48px 0 24px;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.project-category::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.project-category:first-of-type {
+  margin-top: 8px;
+}
+
 /* ---------- PROJECTS ---------- */
 #projects {
   background: var(--bg-elevated);
