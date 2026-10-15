@@ -452,108 +452,139 @@ section {
   margin-bottom: 4px;
 }
 
-/* ---------- PROJECT CATEGORY HEADINGS ---------- */
-.project-category {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--accent-hover);
-  margin: 48px 0 24px;
-  max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
-  letter-spacing: -0.3px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.project-category::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-
-.project-category:first-of-type {
-  margin-top: 8px;
-}
-
-/* ---------- PROJECTS ---------- */
+/* ---------- PROJECTS (side-by-side categories) ---------- */
 #projects {
   background: var(--bg-elevated);
 }
 
-.projects-grid {
+.projects-categories {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
-  max-width: 860px;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1000px;
   margin: 0 auto;
+  align-items: start;
 }
 
-.project-card {
+.project-column {
   background: var(--bg-card);
-  border-radius: 16px;
   border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: border-color var(--transition);
+}
+
+.project-column:hover {
+  border-color: var(--border-hover);
+}
+
+.project-category {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent-hover);
+  margin: 0 0 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: -0.2px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-list-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
   overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.project-list-item:hover {
+  border-color: var(--border-hover);
+}
+
+.project-list-item.open {
+  border-color: var(--accent);
+}
+
+.project-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: default;
+}
+
+.project-list-header h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.btn-toggle {
+  flex-shrink: 0;
+  background: transparent;
+  border: 1.5px solid var(--border-hover);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 560;
+  font-family: inherit;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
   transition: all var(--transition);
 }
 
-.project-card:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
+.btn-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent-hover);
+  background: var(--accent-soft);
 }
 
-.project-card img {
-  width: 100%;
-  height: auto;
-  max-height: 320px;
-  object-fit: cover;
-  border-bottom: 1px solid var(--border);
+.project-list-item.open .btn-toggle {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.project-list-detail {
+  display: none;
+  padding: 0 16px 16px;
+  border-top: 1px solid var(--border);
+}
+
+.project-list-item.open .project-list-detail {
   display: block;
+  padding-top: 14px;
 }
 
-.project-body {
-  padding: 26px 28px;
-}
-
-.project-body h3 {
-  font-size: 1.2rem;
-  color: var(--text-heading);
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.project-body p {
+.project-list-detail p {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 0.9rem;
+  line-height: 1.65;
   margin-bottom: 12px;
 }
 
-.tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
+.project-list-detail .tech {
+  margin-bottom: 14px;
 }
 
-.tech span {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--accent-hover);
-  background: var(--accent-soft);
-  padding: 4px 10px;
-  border-radius: 6px;
-  letter-spacing: 0.2px;
+.project-list-detail .project-links {
+  margin-top: 4px;
 }
 
-.project-links {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+@media (max-width: 800px) {
+  .projects-categories {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
 /* ---------- SKILLS ---------- */
