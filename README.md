@@ -73,4 +73,4 @@ I used AI tools (Claude + Chatbase) to design, write instructions, and test the 
 
 ---
 
-Made with ❤️ during the FlyRank AI Fluency Internship
+Made during the FlyRank AI Fluency Internship
